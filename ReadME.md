@@ -1,37 +1,36 @@
-# Rule-Based Chatbot
+# Chatbot for Intent Classification using NLP and Deep Learning
 
-This is a simple rule-based chatbot project implemented in Python. The chatbot uses a JSON file that contains a list of intents with associated patterns and responses. The chatbot matches user input with the defined patterns to select an appropriate response.
+This project is a simple console-based chatbot that classifies user intents using natural language processing (NLP) and machine learning models. It uses NLTK for preprocessing, a neural network built with TensorFlow/Keras, and a backup SVM model using TF-IDF features.
 
-## Getting Started
+---
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## 📌 Features
 
-### Prerequisites
+- Tokenization, stop word removal, and lemmatization using NLTK
+- Bag-of-Words vectorization + Deep Neural Network (Keras)
+- TF-IDF + SVM (Scikit-learn) as a backup model
+- JSON-based intent-response structure
+- Confidence threshold logic to decide which model’s prediction to use
+- Interactive console-based chatbot experience
 
-- Python 3.x
-- Required Python packages (can be installed using pip):
-    - numpy
-    - nltk
-    - Tensorflow
+---
 
-### Installing
+## 🛠️ Technologies Used
 
-1. Clone the repository or download the source code.
-2. Install the required packages using pip: 
-    - pip install numpy
-    - pip install nltk
-    - pip install Tensorflow
+- Python
+- NLTK
+- TensorFlow / Keras
+- Scikit-learn
+- NumPy
+- JSON
 
-### Customization
+---
 
-To customize the bot's responses, you can modify the Data.json file in the project directory. This file contains a list of predefined intents, each with a set of patterns and responses.
+## 📁 Files
 
-To add a new intent, simply add a new object to the intents list in the JSON file. The object should have the following structure:
+- `code.ipynb` – Main notebook with all code from training to inference
+- `data.json` – Intent patterns and responses
+- `chatbot_m.h5` – Trained deep learning model
+- `tokenizer_data.pkl` – Pickled objects: all words and label encoder
 
-{
-    "tag": "<intent_tag>",
-    "patterns": ["<pattern_1>", "<pattern_2>", ...],
-    "responses": ["<response_1>", "<response_2>", ...]
-}
-
-Replace <intent_tag> with a unique identifier for your intent, <pattern_1> and <pattern_2> with example phrases that the user might input to trigger the intent, and <response_1> and <response_2> with the bot's possible responses to the input.
+---
